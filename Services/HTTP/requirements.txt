@@ -1,0 +1,5 @@
+fastapi
+fastapi_sessions
+uvicorn[standard]
+jinja2
+# mysql-connector-python

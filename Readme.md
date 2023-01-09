@@ -1,7 +1,7 @@
 <h1 align="center"> Cyber HIT project - traps for attackers on services </h1>
 
 
-## Commands
+## Commands (without docker)
 #### Services
 ```
 HTTP  ->  python -m uvicorn main:app --reload 
@@ -15,8 +15,9 @@ RDP   ->
 ```
 #### Docker
 ```
-Run   ->
-Stop  ->
+Run     -> docker compose up
+Stop    -> docker compose down
+Testing -> 
 ```
 
 ## Routing
@@ -32,16 +33,29 @@ Services -
 
 ## Roadmap
 - [ ] Backend (API)
-- [ ] Frontend (GUI)
+- [ ] Frontend (Client)
   - [ ] Login page
   - [ ] Report page
   - [ ] profile page
   - [ ] Admin page
 - [ ] DB (MySQL)
   - [ ] Design
+  - [ ] Init table
 - [ ] Services
   - [ ] HTTP
+    - [x] Client
+    - [x] API
+    - [ ] Traps
   - [ ] FTP
+    - [ ] Client
+    - [ ] API
+    - [ ] Traps
   - [ ] SMTP
+    - [ ] Client
+    - [ ] API
+    - [ ] Traps
   - [ ] RDP
+    - [ ] Client
+    - [ ] API
+    - [ ] Traps
 - [ ] Logger
