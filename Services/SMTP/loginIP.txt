@@ -1,0 +1,13 @@
+11/03/2023 21:20:55: Client IP: 127.0.0.1:57865, The command is: AUTH GET USERS
+11/03/2023 21:21:15: Client IP: 127.0.0.1:57865, The command is: AUTH LOGIN, The details are: Username is: dev, Password is: fullaccess
+11/03/2023 21:32:55: Client IP: 127.0.0.1:57877, The command is: VRFY INFO@WHITEHOUSE.GOV, The details are: The mail that checked is: INFO@WHITEHOUSE.GOV
+11/03/2023 21:33:23: Client IP: 127.0.0.1:57877, The command is: VRFY INFO@WHITEHOUSE,GOV, The details are: The mail that checked is: INFO@WHITEHOUSE,GOV
+11/03/2023 21:33:29: Client IP: 127.0.0.1:57877, The command is: VRFY INFO\, The details are: The mail that checked is: INFO\
+11/03/2023 21:33:49: Client IP: 127.0.0.1:57877, The command is: VRFY INFO@WHITEHOUSE.GOV, The details are: The mail that checked is: INFO@WHITEHOUSE.GOV
+11/03/2023 21:34:27: Client IP: 127.0.0.1:57901, The command is: VRFY INFO@WHITEHOUSE.GOV, The details are: The mail that checked is: INFO@WHITEHOUSE.GOV
+11/03/2023 21:34:37: Client IP: 127.0.0.1:57901, The command is: VRFY INFO@WHITEHOUSE.GOV, The details are: The mail that checked is: INFO@WHITEHOUSE.GOV
+11/03/2023 21:39:52: Client IP: 127.0.0.1:57909, The command is: VRFY INFO@WHITEHOUSE.GOV, The details are: The mail that checked is: INFO@WHITEHOUSE.GOV
+11/03/2023 21:43:17: Client IP: 127.0.0.1:57920, The command is: VRFY INFO@WHITEHOUSE.GOV, The details are: The mail that checked is: info@whitehouse.gov
+11/03/2023 21:43:38: Client IP: 127.0.0.1:57920, The command is: VRFY INFO@WHITEHU, The details are: The mail that checked is: info@whitehu
+11/03/2023 21:43:43: Client IP: 127.0.0.1:57920, The command is: VRFY INFO!, The details are: The mail that checked is: info!
+11/03/2023 21:43:51: Client IP: 127.0.0.1:57920, The command is: VRFY INFO@WHITEHOUSE.GOV, The details are: The mail that checked is: info@whitehouse.gov
