@@ -21,7 +21,7 @@ CREATE TABLE
         `attackerID` INT unsigned NOT NULL AUTO_INCREMENT,
         `ip` VARCHAR(15) NOT NULL,
         `location` TEXT,
-        KEY `idx_ip` (`ip`) USING BTREE,
+        KEY `idx_Attacker_ip` (`ip`) USING BTREE,
         PRIMARY KEY (`attackerID`)
     );
 
@@ -32,7 +32,7 @@ CREATE TABLE
         `serviceID` INT unsigned NOT NULL,
         `description` TEXT,
         `isActivate` TINYINT(1) NOT NULL DEFAULT 1,
-        CONSTRAINT `idx_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
+        CONSTRAINT `idx_Trap_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
         PRIMARY KEY (`trapID`)
     );
 
@@ -43,8 +43,8 @@ CREATE TABLE
         `serviceID` INT unsigned NOT NULL,
         `address` TEXT,
         `isActivate` TINYINT(1) NOT NULL DEFAULT 1,
-        KEY `idx_name` (`name`) USING BTREE,
-        CONSTRAINT `idx_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
+        KEY `idx_Company_name` (`name`) USING BTREE,
+        CONSTRAINT `idx_Company_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
         PRIMARY KEY (`companyID`)
     );
 
@@ -64,15 +64,15 @@ CREATE TABLE
         `isSysAdmin` TINYINT(1) NOT NULL DEFAULT 0,
         `isCompanyAdmin` TINYINT(1) NOT NULL DEFAULT 0,
         `isActive` TINYINT(1) NOT NULL DEFAULT 1,
-        KEY `idx_username` (`username`) USING BTREE,
-        KEY `idx_email` (`email`) USING BTREE,
-        CONSTRAINT `idx_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
-        CONSTRAINT `idx_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
+        KEY `idx_User_username` (`username`) USING BTREE,
+        KEY `idx_User_email` (`email`) USING BTREE,
+        CONSTRAINT `idx_User_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
+        CONSTRAINT `idx_User_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
         PRIMARY KEY (`userID`)
     );
 
 CREATE TABLE
-    IF NOT EXISTS `db`.`Reports` (
+    IF NOT EXISTS `db`.`Report` (
         `reportID` INT unsigned NOT NULL AUTO_INCREMENT,
         `serviceID` INT unsigned NOT NULL,
         `createDate` DATETIME NOT NULL,
@@ -81,9 +81,9 @@ CREATE TABLE
         `attackerID` INT unsigned NOT NULL,
         `trapID` INT unsigned NOT NULL,
         `description` TEXT,
-        CONSTRAINT `idx_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
-        CONSTRAINT `idx_trapID` FOREIGN KEY (`trapID`) REFERENCES `Trap` (`trapID`),
-        CONSTRAINT `idx_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
-        CONSTRAINT `idx_attackerID` FOREIGN KEY (`attackerID`) REFERENCES `Attacker` (`attackerID`),
+        CONSTRAINT `idx_Report_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
+        CONSTRAINT `idx_Report_trapID` FOREIGN KEY (`trapID`) REFERENCES `Trap` (`trapID`),
+        CONSTRAINT `idx_Report_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
+        CONSTRAINT `idx_Report_attackerID` FOREIGN KEY (`attackerID`) REFERENCES `Attacker` (`attackerID`),
         PRIMARY KEY (`reportID`)
     );
