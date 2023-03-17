@@ -6,7 +6,7 @@
 ```
 HTTP  ->  python -m uvicorn main:app --reload 
 FTP   ->  python main.py
-SMTP  ->
+SMTP  ->  python main.py
 RDP   ->
 ```
 #### API
@@ -25,10 +25,10 @@ Testing ->
 API:          :5000
 GUI:          :5001
 Services -
-  HTTP:       :8000
-  FTP:        :21
-  SMTP:       :25
-  RDP:        :3389
+  HTTP:       :8080
+  FTP:        :2121
+  SMTP:       :2525
+  RDP:        : ?
 ```
 
 ## Roadmap

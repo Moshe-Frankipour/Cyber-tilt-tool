@@ -26,6 +26,18 @@ services:
     depends_on:
       db:
         condition: service_healthy
+  service_smtp:
+    build: /Services/SMTP
+    ports:
+      - 2525:25
+    volumes:
+      - ./Services/SMTP:/app
+    environment:
+      - USERNAME_DB=${USERNAME_DB}
+      - PASSWORD_DB=${PASSWORD_DB}
+    depends_on:
+      db:
+        condition: service_healthy
 
   ## Logger
 
