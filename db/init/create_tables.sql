@@ -1,6 +1,6 @@
 CREATE TABLE
     IF NOT EXISTS `db`.`Services_HTTP_IPFOLLOW` (
-        `ip_id` INT NOT NULL AUTO_INCREMENT,
+        `ip_id` INT unsigned NOT NULL AUTO_INCREMENT,
         `ip` VARCHAR(15) NOT NULL,
         `counter` INT DEFAULT 0 NOT NULL,
         `last_date_login` DATE NOT NULL,
@@ -8,20 +8,12 @@ CREATE TABLE
     );
 
 CREATE TABLE
-    IF NOT EXISTS `db`.`Reports` (
-        `reportID` INT unsigned NOT NULL AUTO_INCREMENT,
-        `serviceID` INT unsigned NOT NULL,
-        `createDate` DATETIME NOT NULL,
-        `connectionDuration` TIME,
-        `companyID` INT unsigned NOT NULL,
-        `attackerID` INT unsigned NOT NULL,
-        `trapID` INT unsigned NOT NULL,
+    IF NOT EXISTS `db`.`Service` (
+        `serviceID` INT unsigned NOT NULL AUTO_INCREMENT,
+        `name` VARCHAR(5) NOT NULL,
+        `port` INT NOT NULL,
         `description` TEXT,
-        FOREIGN KEY (companyID) REFERENCES Company(companyID),
-        FOREIGN KEY (trapID) REFERENCES Trap(trapID),
-        FOREIGN KEY (serviceID) REFERENCES Service(serviceID),
-        FOREIGN KEY (attackerID) REFERENCES Attacker(attackerID),
-        PRIMARY KEY (`reportID`)
+        PRIMARY KEY (`serviceID`)
     );
 
 CREATE TABLE
@@ -34,22 +26,13 @@ CREATE TABLE
     );
 
 CREATE TABLE
-    IF NOT EXISTS `db`.`Service` (
-        `serviceID` INT unsigned NOT NULL AUTO_INCREMENT,
-        `name` VARCHAR(5) NOT NULL,
-        `port` INT unsigned NOT NULL,
-        `description` TEXT,
-        PRIMARY KEY (`serviceID`)
-    );
-
-CREATE TABLE
     IF NOT EXISTS `db`.`Trap` (
         `trapID` INT unsigned NOT NULL AUTO_INCREMENT,
         `name` VARCHAR(30) NOT NULL,
         `serviceID` INT unsigned NOT NULL,
         `description` TEXT,
-        `isActivate` BOOLEAN NOT NULL DEFAULT 'true',
-        FOREIGN KEY (serviceID) REFERENCES Service(serviceID),
+        `isActivate` TINYINT(1) NOT NULL DEFAULT 1,
+        CONSTRAINT `idx_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
         PRIMARY KEY (`trapID`)
     );
 
@@ -59,9 +42,9 @@ CREATE TABLE
         `name` VARCHAR(128) NOT NULL,
         `serviceID` INT unsigned NOT NULL,
         `address` TEXT,
-        `isActivate` BOOLEAN NOT NULL DEFAULT 'true',
+        `isActivate` TINYINT(1) NOT NULL DEFAULT 1,
         KEY `idx_name` (`name`) USING BTREE,
-        FOREIGN KEY (serviceID) REFERENCES Service(serviceID),
+        CONSTRAINT `idx_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
         PRIMARY KEY (`companyID`)
     );
 
@@ -76,14 +59,31 @@ CREATE TABLE
         `address` TEXT,
         `birthdate` DATE NOT NULL,
         `registerDate` DATETIME NOT NULL,
-        `serviceID` INT NOT NULL DEFAULT '-1',
+        `serviceID` INT unsigned,
         `companyID` INT unsigned NOT NULL,
-        `isSysAdmin` BOOLEAN NOT NULL DEFAULT 'false',
-        `isCompanyAdmin` BOOLEAN NOT NULL DEFAULT 'false',
-        `isActive` BOOLEAN NOT NULL DEFAULT 'true',
+        `isSysAdmin` TINYINT(1) NOT NULL DEFAULT 0,
+        `isCompanyAdmin` TINYINT(1) NOT NULL DEFAULT 0,
+        `isActive` TINYINT(1) NOT NULL DEFAULT 1,
         KEY `idx_username` (`username`) USING BTREE,
         KEY `idx_email` (`email`) USING BTREE,
-        FOREIGN KEY (companyID) REFERENCES Company(companyID),
-        FOREIGN KEY (serviceID) REFERENCES Service(serviceID),
+        CONSTRAINT `idx_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
+        CONSTRAINT `idx_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
         PRIMARY KEY (`userID`)
+    );
+
+CREATE TABLE
+    IF NOT EXISTS `db`.`Reports` (
+        `reportID` INT unsigned NOT NULL AUTO_INCREMENT,
+        `serviceID` INT unsigned NOT NULL,
+        `createDate` DATETIME NOT NULL,
+        `connectionDuration` TIME,
+        `companyID` INT unsigned NOT NULL,
+        `attackerID` INT unsigned NOT NULL,
+        `trapID` INT unsigned NOT NULL,
+        `description` TEXT,
+        CONSTRAINT `idx_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
+        CONSTRAINT `idx_trapID` FOREIGN KEY (`trapID`) REFERENCES `Trap` (`trapID`),
+        CONSTRAINT `idx_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
+        CONSTRAINT `idx_attackerID` FOREIGN KEY (`attackerID`) REFERENCES `Attacker` (`attackerID`),
+        PRIMARY KEY (`reportID`)
     );
