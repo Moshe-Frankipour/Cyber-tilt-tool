@@ -38,8 +38,18 @@ services:
     depends_on:
       db:
         condition: service_healthy
-
-  ## Logger
+  service_ssh:
+    build: /Services/SSH
+    ports:
+      - 2222:22
+    volumes:
+      - ./Services/SSH:/app
+    environment:
+      - USERNAME_DB=${USERNAME_DB}
+      - PASSWORD_DB=${PASSWORD_DB}
+    depends_on:
+      db:
+        condition: service_healthy
 
   ## API
 

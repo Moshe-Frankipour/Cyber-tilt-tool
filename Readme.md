@@ -7,7 +7,7 @@
 HTTP  ->  python -m uvicorn main:app --reload 
 FTP   ->  python main.py
 SMTP  ->  python main.py
-RDP   ->
+SSH   ->  python main.py
 ```
 #### API
 ```
@@ -28,7 +28,7 @@ Services -
   HTTP:       :8080
   FTP:        :2121
   SMTP:       :2525
-  RDP:        : ?
+  SSH:        :2222
 ```
 
 ## Roadmap
@@ -39,26 +39,21 @@ Services -
   - [ ] profile page
   - [ ] Admin page
 - [ ] DB (MySQL)
-  - [ ] Design
-  - [ ] Init table
-    - [x] Services_HTTP_IPFOLLOW
-    - [ ] Services_
-    - [ ] Services_
+  - [x] Design
+  - [x] Init table
 - [ ] Services
   - [ ] HTTP
     - [x] Client
     - [x] API
     - [x] Traps
   - [ ] FTP
-    - [x] Client
+    - [x] Server
     - [ ] Traps
   - [ ] SMTP
-    - [ ] Client
-    - [ ] API
+    - [x] Server
     - [ ] Traps
-  - [ ] RDP
-    - [ ] Client
-    - [ ] API
+  - [ ] SSH
+    - [x] Server
     - [ ] Traps
 - [ ] Logger
 
