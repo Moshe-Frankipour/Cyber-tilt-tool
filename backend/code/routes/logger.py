@@ -30,9 +30,10 @@ Add new log
 
 @logger.post('')
 async def add_log(log: Log):
+    now = datetime.datetime.now()
     conn.execute(logs.insert().values(
         SessionID=log.SessionID,
-        createAt=datetime.now(),
+        createAt=now.strftime("%Y-%m-%d %H:%M:%S"),
         description=log.description
     ))
     return ORJSONResponse('CREATED', status_code=status.HTTP_201_CREATED)
