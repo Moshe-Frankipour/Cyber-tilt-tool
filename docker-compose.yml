@@ -12,8 +12,7 @@ services:
       - USERNAME_DB=${USERNAME_DB}
       - PASSWORD_DB=${PASSWORD_DB}
     depends_on:
-      db:
-        condition: service_healthy
+      - backend
   service_ftp:
     build: /Services/FTP
     ports:
@@ -24,8 +23,7 @@ services:
       - USERNAME_DB=${USERNAME_DB}
       - PASSWORD_DB=${PASSWORD_DB}
     depends_on:
-      db:
-        condition: service_healthy
+      - backend
   service_smtp:
     build: /Services/SMTP
     ports:
@@ -36,8 +34,7 @@ services:
       - USERNAME_DB=${USERNAME_DB}
       - PASSWORD_DB=${PASSWORD_DB}
     depends_on:
-      db:
-        condition: service_healthy
+      - backend
   service_ssh:
     build: /Services/SSH
     ports:
@@ -48,8 +45,7 @@ services:
       - USERNAME_DB=${USERNAME_DB}
       - PASSWORD_DB=${PASSWORD_DB}
     depends_on:
-      db:
-        condition: service_healthy
+      - backend
 
   ## API
   backend:
@@ -57,7 +53,7 @@ services:
     ports:
       - 5000:80
     volumes:
-      - ./backend:/app
+      - ./backend/code:/app
     environment:
       - USERNAME_DB=${USERNAME_DB}
       - PASSWORD_DB=${PASSWORD_DB}
