@@ -1,8 +1,8 @@
 from fastapi import APIRouter, status
 from fastapi.responses import ORJSONResponse
 from config.db import conn
-from models.index import logs
-from schemas.index import Log
+from models.index import logs, reports
+from schemas.index import Log, LogsEntity, LogEntity, Report, ReportEntity, ReportsEntity
 from datetime import datetime
 import uuid
 
@@ -20,7 +20,8 @@ Test
 
 @logger.get('test')
 async def test():
-    return conn.execute(logs.select()).fetchall()
+    data = conn.execute(logs.select()).fetchall()
+    return LogsEntity(data)
 
 
 """
@@ -30,9 +31,9 @@ Add new log
 
 @logger.post('')
 async def add_log(log: Log):
-    now = datetime.datetime.now()
+    now = datetime.now()
     conn.execute(logs.insert().values(
-        SessionID=log.SessionID,
+        sessionID=log.sessionID,
         createAt=now.strftime("%Y-%m-%d %H:%M:%S"),
         description=log.description
     ))
@@ -43,10 +44,19 @@ Create new report and return `SessionID`
 """
 
 
-@logger.get('/init')
-async def init():
+@logger.post('/init')
+async def init(report: Report):
     session_id = uuid.uuid4().hex
-    return ORJSONResponse(session_id, status_code=status.HTTP_200_OK)
+    now = datetime.now()
+    conn.execute(reports.insert().values(
+        serviceID=report.serviceID,
+        companyID=report.companyID,
+        attackerID=report.attackerID,
+        trapID=report.trapID,
+        sessionLogID=session_id,
+        createAt=now.strftime("%Y-%m-%d %H:%M:%S"),
+    ))
+    return ORJSONResponse(session_id, status_code=status.HTTP_201_CREATED)
 
 """
 Get logs by SessionID
@@ -55,6 +65,7 @@ Get logs by SessionID
 
 @logger.get('/{session}')
 async def get_logs_by_session(session: str):
-    data = conn.execute(logs.select().where(
-        logs.l.SessionID == session)).fetchall()
-    return ORJSONResponse(data, status_code=status.HTTP_200_OK)
+    query = logs.select().where(
+        logs.c.sessionID == session)
+    data = conn.execute(query).fetchall()
+    return ORJSONResponse(LogsEntity(data), status_code=status.HTTP_200_OK)

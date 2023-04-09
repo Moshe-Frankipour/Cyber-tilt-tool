@@ -51,10 +51,10 @@ CREATE TABLE
 CREATE TABLE
     IF NOT EXISTS `db`.`Log` (
         `logID` INT unsigned NOT NULL AUTO_INCREMENT,
-        `SessionID` VARCHAR(32) NOT NULL,
+        `sessionID` VARCHAR(32) NOT NULL,
         `createAt` DATETIME NOT NULL,
         `description` TEXT,
-        KEY `idx_sessionID` (`SessionID`) USING HASH,
+        KEY `idx_sessionID` (`sessionID`) USING HASH,
         PRIMARY KEY (`logID`)
     );
 
@@ -66,8 +66,8 @@ CREATE TABLE
         `companyID` INT unsigned NOT NULL,
         `attackerID` INT unsigned NOT NULL,
         `trapID` INT unsigned NOT NULL,
-        `SessionLogID` VARCHAR(32) NOT NULL,
-        CONSTRAINT `idx_Report_log_sessionID` FOREIGN KEY (`SessionLogID`) REFERENCES `Log` (`SessionID`),
+        `sessionLogID` VARCHAR(32) NOT NULL,
+        CONSTRAINT `idx_Report_log_sessionID` FOREIGN KEY (`sessionLogID`) REFERENCES `Log` (`sessionID`),
         CONSTRAINT `idx_Report_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
         CONSTRAINT `idx_Report_trapID` FOREIGN KEY (`trapID`) REFERENCES `Trap` (`trapID`),
         CONSTRAINT `idx_Report_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),

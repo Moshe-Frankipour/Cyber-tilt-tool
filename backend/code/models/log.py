@@ -5,7 +5,7 @@ from config.db import meta
 logs = Table(
     'Log', meta,
     Column('logID', Integer, primary_key=True),
-    Column('SessionID', String(32)),
+    Column('sessionID', String(32)),
     Column('createAt', DateTime),
     Column('description', String),
 )
