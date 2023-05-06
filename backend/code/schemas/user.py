@@ -19,6 +19,11 @@ class User(BaseModel):
     isActive: bool
 
 
+class LogIn():
+    username: str
+    password: str
+
+
 def UserEntity(item) -> dict:
     return {
         "userID": item[0],
