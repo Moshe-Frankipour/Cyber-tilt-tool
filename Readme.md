@@ -9,8 +9,6 @@ FTP   ->  python main.py
 SMTP  ->  python main.py
 SSH   ->  python main.py
 ```
-#### API
-- Documentation API: `localhost:5000/docs`
 
 ## Docker Command
 ```
@@ -20,6 +18,9 @@ Stop    -> docker compose down
 
 #### Testing
 ` ./tests/ python -m pytest `
+
+## Documentation
+- Documentation API: `localhost:5000/docs`
 
 ## Routing
 ```
@@ -37,6 +38,14 @@ Services -
 
 ## Roadmap
 - [ ] Backend (API)
+  - [ ] config
+  - [ ] models
+  - [ ] routes
+    - [ ] user
+    - [ ] auth
+    - [ ] report
+    - [ ] logger
+  - [ ] schemas
 - [ ] Frontend (Client)
   - [ ] Login page
   - [ ] Report page
@@ -59,7 +68,6 @@ Services -
   - [ ] SSH
     - [x] Server
     - [ ] Traps
-- [ ] Logger
 - [ ] Testing
 
 ## Team
