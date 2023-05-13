@@ -1,6 +1,7 @@
 from sqlalchemy import Table, Column
 from sqlalchemy.sql.sqltypes import Integer, String, DateTime, Boolean
 from config.db import meta
+from pydantic import BaseModel
 
 users = Table(
     'User', meta,
@@ -19,3 +20,8 @@ users = Table(
     Column('isCompanyAdmin', Boolean),
     Column('isActive', Boolean),
 )
+
+
+class loginUser(BaseModel):
+    email: str
+    password: str

@@ -6,3 +6,9 @@ orjson
 
 SQLAlchemy
 pydantic
+bcrypt
+sqlalchemy
+mysql-connector-python
+mysqlclient
+
+configparser

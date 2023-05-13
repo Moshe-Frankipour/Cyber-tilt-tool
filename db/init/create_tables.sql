@@ -40,11 +40,9 @@ CREATE TABLE
     IF NOT EXISTS `db`.`Company` (
         `companyID` INT unsigned NOT NULL AUTO_INCREMENT,
         `name` VARCHAR(128) NOT NULL,
-        `serviceID` INT unsigned NOT NULL,
         `address` TEXT,
         `isActivate` TINYINT(1) NOT NULL DEFAULT 1,
         KEY `idx_Company_name` (`name`) USING BTREE,
-        CONSTRAINT `idx_Company_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
         PRIMARY KEY (`companyID`)
     );
 
@@ -86,7 +84,6 @@ CREATE TABLE
         `address` TEXT,
         `birthdate` DATE NOT NULL,
         `registerDate` DATETIME NOT NULL,
-        `serviceID` INT unsigned,
         `companyID` INT unsigned NOT NULL,
         `isSysAdmin` TINYINT(1) NOT NULL DEFAULT 0,
         `isCompanyAdmin` TINYINT(1) NOT NULL DEFAULT 0,
@@ -94,6 +91,15 @@ CREATE TABLE
         KEY `idx_User_username` (`username`) USING BTREE,
         KEY `idx_User_email` (`email`) USING BTREE,
         CONSTRAINT `idx_User_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
-        CONSTRAINT `idx_User_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
         PRIMARY KEY (`userID`)
+    );
+
+CREATE TABLE
+    IF NOT EXISTS `db`.`linking_company_service` (
+        `id` INT unsigned NOT NULL AUTO_INCREMENT,
+        `company_id` INT unsigned NOT NULL,
+        `service_id` INT unsigned NOT NULL,
+        CONSTRAINT `idx_linking_company_service_company_id` FOREIGN KEY (`company_id`) REFERENCES `Company` (`companyID`),
+        CONSTRAINT `idx_linking_company_service_service_id` FOREIGN KEY (`service_id`) REFERENCES `Service` (`serviceID`),
+        PRIMARY KEY (`id`)
     );
