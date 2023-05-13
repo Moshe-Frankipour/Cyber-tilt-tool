@@ -10,9 +10,6 @@ SMTP  ->  python main.py
 SSH   ->  python main.py
 ```
 #### API
-```
-
-```
 - Documentation API: `localhost:5000/docs`
 
 ## Docker Command
@@ -35,7 +32,8 @@ Services -
   SSH:        :2222
 ```
 
-
+## DB Diagram
+<img src="./assets/sqlmodel.png"/>
 
 ## Roadmap
 - [ ] Backend (API)
