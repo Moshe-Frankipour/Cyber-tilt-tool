@@ -25,7 +25,7 @@ async def getReports(session_data: SessionData = Depends(verifier)):
     return ORJSONResponse(ReportsEntity(data), status_code=status.HTTP_200_OK)
 
 
-@user.post('/api/register', tags=["User"])
+@user.post('/api/register')
 async def register(user: UserDTO):
     is_match = re.fullmatch(config_['regex_password'], user.password)
     if not is_match:

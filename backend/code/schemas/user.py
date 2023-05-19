@@ -4,6 +4,11 @@ from datetime import datetime
 import bcrypt
 
 
+class LogIn():
+    username: str
+    password: str
+
+
 class User(BaseModel):
     userID: int
     username: str
@@ -18,11 +23,6 @@ class User(BaseModel):
     isSysAdmin: bool
     isCompanyAdmin: bool
     isActive: bool
-
-
-class LogIn():
-    username: str
-    password: str
 
 
 def UserEntity(item) -> User:
