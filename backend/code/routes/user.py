@@ -38,6 +38,13 @@ async def register(user: UserDTO):
     if not is_match:
         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST,
                             content="The password must include:\nAt least 10 characters \n any of the special characters: @#$%^&+=! \n numbers: 0-9 \n lowercase letters: a-z \n uppercase letters: A-Z")
+
+    # Checking that the email does not exist
+    db_select_user = conn.execute(users.select().where(
+        users.c.email == user.email)).fetchone()
+    if db_select_user is not None:
+        return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content="BAD_REQUEST")
+
     user.password = hash(user.password)
 
     conn.execute(users.insert().values(

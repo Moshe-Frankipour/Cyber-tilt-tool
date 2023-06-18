@@ -3,7 +3,7 @@ INSERT INTO
         `companyID`,
         `name`,
         `address`,
-        `isActivate`,
+        `isActivate`
     )
 SELECT 1, 'System', 'IL', 1
 WHERE NOT EXISTS (
