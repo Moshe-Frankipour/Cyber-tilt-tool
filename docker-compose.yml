@@ -2,7 +2,6 @@ version: '3'
 
 services:
   ## services- HTTP, FTP, SSH, SMTP
-  # TODO: copy shared folder !
   service_http:
     build: /Services/HTTP
     ports:
