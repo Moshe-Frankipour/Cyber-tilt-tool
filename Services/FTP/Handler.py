@@ -1,5 +1,9 @@
 from pyftpdlib.handlers import FTPHandler
+import requests
+
+
 class ToolHandler(FTPHandler):
+    session = ""
 
     def on_connect(self):
         print("on_connect")
@@ -37,3 +41,22 @@ class ToolHandler(FTPHandler):
         print("on_incomplete_file_received")
         import os
         os.remove(file)
+
+
+def log(session, msg):
+    requests.post('http://backend/api/log',
+                  {"sessionID": session,
+                   "description": msg}
+                  )
+
+
+def init():
+    data = requests.post('http://backend/api/log/init',
+                         {
+                             "serviceID": 0,
+                             "companyID": 0,
+                             "attackerID": 0,
+                             "trapID": 0
+                         }
+                         )
+    return data
