@@ -2,48 +2,72 @@ version: '3'
 
 services:
   ## services- HTTP, FTP, SSH, SMTP
-  service_http:
+  service_http_apple:
     build: /Services/HTTP
     ports:
       - 8080:80
-    volumes:
-      - ./Services/HTTP:/app
+    #volumes:
+    #  - ./Services/HTTP:/app
     environment:
       - USERNAME_DB=${USERNAME_DB}
       - PASSWORD_DB=${PASSWORD_DB}
+      - COMPANY_ID=3
+      - SERVICE_ID=4
     depends_on:
       - backend
-  service_ftp:
+
+  service_ftp_intel:
     build: /Services/FTP
     ports:
       - 2121:21
-    volumes:
-      - ./Services/FTP:/app
+    #volumes:
+    #  - ./Services/FTP:/app
     environment:
       - USERNAME_DB=${USERNAME_DB}
       - PASSWORD_DB=${PASSWORD_DB}
+      - COMPANY_ID=2
+      - SERVICE_ID=1
     depends_on:
       - backend
-  service_smtp:
+  service_ftp_apple:
+    build: /Services/FTP
+    ports:
+      - 2122:21
+    #volumes:
+    #  - ./Services/FTP:/app
+    environment:
+      - USERNAME_DB=${USERNAME_DB}
+      - PASSWORD_DB=${PASSWORD_DB}
+      - COMPANY_ID=3
+      - SERVICE_ID=2
+    depends_on:
+      - backend
+
+  service_smtp_intel:
     build: /Services/SMTP
     ports:
       - 2525:25
-    volumes:
-      - ./Services/SMTP:/app
+    #volumes:
+    #  - ./Services/SMTP:/app
     environment:
       - USERNAME_DB=${USERNAME_DB}
       - PASSWORD_DB=${PASSWORD_DB}
+      - COMPANY_ID=2
+      - SERVICE_ID=3
     depends_on:
       - backend
-  service_ssh:
+
+  service_ssh_intel:
     build: /Services/SSH
     ports:
       - 2222:22
-    volumes:
-      - ./Services/SSH:/app
+    #volumes:
+    #  - ./Services/SSH:/app
     environment:
       - USERNAME_DB=${USERNAME_DB}
       - PASSWORD_DB=${PASSWORD_DB}
+      - COMPANY_ID=2
+      - SERVICE_ID=5
     depends_on:
       - backend
 
