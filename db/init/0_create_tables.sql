@@ -8,21 +8,33 @@ CREATE TABLE
     );
 
 CREATE TABLE
-    IF NOT EXISTS `db`.`Service` (
-        `serviceID` INT unsigned NOT NULL AUTO_INCREMENT,
-        `name` VARCHAR(5) NOT NULL,
-        `port` INT NOT NULL,
-        `description` TEXT,
-        PRIMARY KEY (`serviceID`)
-    );
-
-CREATE TABLE
     IF NOT EXISTS `db`.`Attacker` (
         `attackerID` INT unsigned NOT NULL AUTO_INCREMENT,
         `ip` VARCHAR(15) NOT NULL,
         `location` TEXT,
         KEY `idx_Attacker_ip` (`ip`) USING BTREE,
         PRIMARY KEY (`attackerID`)
+    );
+
+CREATE TABLE
+    IF NOT EXISTS `db`.`Company` (
+        `companyID` INT unsigned NOT NULL AUTO_INCREMENT,
+        `name` VARCHAR(128) NOT NULL,
+        `address` TEXT,
+        `isActivate` TINYINT(1) NOT NULL DEFAULT 1,
+        KEY `idx_Company_name` (`name`) USING BTREE,
+        PRIMARY KEY (`companyID`)
+    );
+
+CREATE TABLE
+    IF NOT EXISTS `db`.`Service` (
+        `serviceID` INT unsigned NOT NULL AUTO_INCREMENT,
+        `name` VARCHAR(25) NOT NULL,
+        `port` INT NOT NULL,
+        `description` TEXT,
+        `companyID` INT unsigned NOT NULL,
+        CONSTRAINT `idx_Service_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
+        PRIMARY KEY (`serviceID`)
     );
 
 CREATE TABLE
@@ -34,16 +46,6 @@ CREATE TABLE
         `isActivate` TINYINT(1) NOT NULL DEFAULT 1,
         CONSTRAINT `idx_Trap_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
         PRIMARY KEY (`trapID`)
-    );
-
-CREATE TABLE
-    IF NOT EXISTS `db`.`Company` (
-        `companyID` INT unsigned NOT NULL AUTO_INCREMENT,
-        `name` VARCHAR(128) NOT NULL,
-        `address` TEXT,
-        `isActivate` TINYINT(1) NOT NULL DEFAULT 1,
-        KEY `idx_Company_name` (`name`) USING BTREE,
-        PRIMARY KEY (`companyID`)
     );
 
 CREATE TABLE
@@ -89,16 +91,6 @@ CREATE TABLE
         KEY `idx_User_email` (`email`) USING BTREE,
         CONSTRAINT `idx_User_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
         PRIMARY KEY (`userID`)
-    );
-
-CREATE TABLE
-    IF NOT EXISTS `db`.`linking_company_service` (
-        `id` INT unsigned NOT NULL AUTO_INCREMENT,
-        `company_id` INT unsigned NOT NULL,
-        `service_id` INT unsigned NOT NULL,
-        CONSTRAINT `idx_linking_company_service_company_id` FOREIGN KEY (`company_id`) REFERENCES `Company` (`companyID`),
-        CONSTRAINT `idx_linking_company_service_service_id` FOREIGN KEY (`service_id`) REFERENCES `Service` (`serviceID`),
-        PRIMARY KEY (`id`)
     );
 
 CREATE TABLE
