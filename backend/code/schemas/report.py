@@ -6,7 +6,7 @@ from datetime import datetime
 class Report(BaseModel):
     serviceID: int
     companyID: int
-    attackerID: int
+    attackerIP: str
     trapID: int
 
 

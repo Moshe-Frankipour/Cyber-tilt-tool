@@ -1,7 +1,7 @@
 from fastapi import APIRouter, status
 from fastapi.responses import ORJSONResponse
 from config.db import conn
-from models.index import logs, reports
+from models.index import logs, reports, attackers
 from schemas.index import Log, LogsEntity, LogEntity, Report, ReportEntity, ReportsEntity
 from datetime import datetime
 import uuid
@@ -47,12 +47,19 @@ Create new report and return `SessionID`
 
 @logger.post('/init')
 async def init(report: Report):
+    attacker = conn.execute(attackers.select().where(
+        attackers.c.ip == report.attackerIP
+    )).fetchone()
+    if attacker is None:
+        attacker = conn.execute(attackers.insert().select(
+            attackers.c.ip == report.attackerIP
+        ))
     session_id = uuid.uuid4().hex
     now = datetime.now()
     conn.execute(reports.insert().values(
         serviceID=report.serviceID,
         companyID=report.companyID,
-        attackerID=report.attackerID,
+        attackerID=attacker.attackerID,
         trapID=report.trapID,
         sessionLogID=session_id,
         createAt=now.strftime("%Y-%m-%d %H:%M:%S"),

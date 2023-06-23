@@ -30,11 +30,20 @@ CREATE TABLE
     IF NOT EXISTS `db`.`Service` (
         `serviceID` INT unsigned NOT NULL AUTO_INCREMENT,
         `name` VARCHAR(25) NOT NULL,
-        `port` INT NOT NULL,
         `description` TEXT,
-        `companyID` INT unsigned NOT NULL,
-        CONSTRAINT `idx_Service_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
         PRIMARY KEY (`serviceID`)
+    );
+
+CREATE TABLE
+    IF NOT EXISTS `db`.`Companies_Services` (
+        `ID` INT unsigned NOT NULL AUTO_INCREMENT,
+        `name` VARCHAR(25) NOT NULL,
+        `port` INT NOT NULL,
+        `companyID` INT unsigned NOT NULL,
+        `serviceID` INT unsigned NOT NULL,
+        PRIMARY KEY (`ID`),
+        CONSTRAINT `idx_Companies_Services_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
+        CONSTRAINT `idx_Companies_Services_companyID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`)
     );
 
 CREATE TABLE
@@ -61,16 +70,14 @@ CREATE TABLE
 CREATE TABLE
     IF NOT EXISTS `db`.`Report` (
         `reportID` INT unsigned NOT NULL AUTO_INCREMENT,
-        `serviceID` INT unsigned NOT NULL,
         `createAt` DATETIME NOT NULL,
-        `companyID` INT unsigned NOT NULL,
+        `companies_services_id` INT unsigned NOT NULL,
         `attackerID` INT unsigned NOT NULL,
         `trapID` INT unsigned NOT NULL,
         `sessionLogID` VARCHAR(32) NOT NULL,
         CONSTRAINT `idx_Report_log_sessionID` FOREIGN KEY (`sessionLogID`) REFERENCES `Log` (`sessionID`),
-        CONSTRAINT `idx_Report_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
+        CONSTRAINT `idx_Report_companies_services_id` FOREIGN KEY (`companies_services_id`) REFERENCES `Companies_Services` (`ID`),
         CONSTRAINT `idx_Report_trapID` FOREIGN KEY (`trapID`) REFERENCES `Trap` (`trapID`),
-        CONSTRAINT `idx_Report_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`),
         CONSTRAINT `idx_Report_attackerID` FOREIGN KEY (`attackerID`) REFERENCES `Attacker` (`attackerID`),
         PRIMARY KEY (`reportID`)
     );

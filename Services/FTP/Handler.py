@@ -1,5 +1,6 @@
 from pyftpdlib.handlers import FTPHandler
 import requests
+import os
 
 
 class ToolHandler(FTPHandler):
@@ -17,6 +18,7 @@ class ToolHandler(FTPHandler):
         print("## on_login ##")
         print("username:", username)
         print(f"{self.remote_ip} {self.remote_port}")
+        self.session = init(self.remote_ip)
         pass
 
     def on_logout(self, username):
@@ -44,19 +46,23 @@ class ToolHandler(FTPHandler):
 
 
 def log(session, msg):
-    requests.post('http://backend/api/log',
-                  {"sessionID": session,
-                   "description": msg}
-                  )
+    res = requests.post('http://backend/api/log',
+                        {"sessionID": session,
+                         "description": msg}
+                        )
+    print(res.text)
+    print(res.status_code)
 
 
-def init():
+def init(attackerIP) -> str:
     data = requests.post('http://backend/api/log/init',
                          {
-                             "serviceID": 0,
-                             "companyID": 0,
-                             "attackerID": 0,
+                             "serviceID": os.environ.get('SERVICE_ID'),
+                             "companyID": os.environ.get('COMPANY_ID'),
+                             "attackerIP": attackerIP,
                              "trapID": 0
                          }
                          )
-    return data
+    print(data.text)
+    print(data.status_code)
+    return data.text
