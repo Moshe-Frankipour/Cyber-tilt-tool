@@ -60,7 +60,7 @@ CREATE TABLE
 CREATE TABLE
     IF NOT EXISTS `db`.`Log` (
         `logID` INT unsigned NOT NULL AUTO_INCREMENT,
-        `sessionID` VARCHAR(36) NOT NULL,
+        `sessionID` VARCHAR(40) NOT NULL,
         `createAt` DATETIME NOT NULL,
         `description` TEXT,
         KEY `idx_sessionID` (`sessionID`) USING HASH,

@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-
 from routes.logger import logger
 from routes.user import user
 from routes.auth import auth

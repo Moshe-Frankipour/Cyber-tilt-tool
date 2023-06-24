@@ -1506,3 +1506,1533 @@ WHERE NOT EXISTS (
         FROM `db`.`Log`
         WHERE `logID` = 15
     );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    16,
+    '43d7316e-d85d-4b9f-a9b4-f3d5d4266f56',
+    '2023-07-10 09:15:32',
+    'Execute Command: on_login: Username: Administrator, Password: admin'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 16
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    17,
+    '43d7316e-d85d-4b9f-a9b4-f3d5d4266f56',
+    '2023-07-10 09:15:34',
+    'Execute Command: on_file_sent'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 17
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    18,
+    '43d7316e-d85d-4b9f-a9b4-f3d5d4266f56',
+    '2023-07-10 09:15:36',
+    'Execute Command: on_file_received'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 18
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    19,
+    '43d7316e-d85d-4b9f-a9b4-f3d5d4266f56',
+    '2023-07-10 09:15:38',
+    'Execute Command: on_logout'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 19
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    20,
+    '43d7316e-d85d-4b9f-a9b4-f3d5d4266f56',
+    '2023-07-10 09:15:40',
+    'Execute Command: on_disconnect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 20
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    21,
+    '5c3a7599-44c1-4a8b-9a5e-cce0e8b89175',
+    '2023-08-05 16:45:22',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 21
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    22,
+    '5c3a7599-44c1-4a8b-9a5e-cce0e8b89175',
+    '2023-08-05 16:45:45',
+    'login: Username: admin, Password: admin'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 23
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    24,
+    '5c3a7599-44c1-4a8b-9a5e-cce0e8b89175',
+    '2023-08-05 16:45:58',
+    'Execute Command: Users Details'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 25
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    26,
+    '9b842c8d-6631-4e20-89f9-76a63c7e548f',
+    '2023-09-18 12:30:55',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 26
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    27,
+    '9b842c8d-6631-4e20-89f9-76a63c7e548f',
+    '2023-09-19 12:31:24',
+    'Execute Command: on_login: Username: root Password: toor'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 27
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    28,
+    '9b842c8d-6631-4e20-89f9-76a63c7e548f',
+    '2023-09-20 12:31:53',
+    'Execute Command: on_file_sent'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 28
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    29,
+    '9b842c8d-6631-4e20-89f9-76a63c7e548f',
+    '2023-09-21 12:32:22',
+    'Execute Command: on_logout'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 29
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    30,
+    '9b842c8d-6631-4e20-89f9-76a63c7e548f',
+    '2023-09-22 12:32:51',
+    'Execute Command: on_disconnect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 31
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    32,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f13',
+    '2023-10-29 19:55:10',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 32
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    33,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f13',
+    '2023-10-29 19:56:30',
+    'login: Username: seed Password: dees'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 33
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    34,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f13',
+    '2023-10-29 19:57:50',
+    'Execute Command: cd'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 34
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    35,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f13',
+    '2023-10-29 19:59:10',
+    'Execute Command: cat'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 35
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    36,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f13',
+    '2023-10-29 20:00:30',
+    'Execute Command: ls'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 36
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    37,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f14',
+    '2023-10-29 20:01:50',
+    'Execute Command: help'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 37
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    38,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f15',
+    '2023-10-29 20:03:10',
+    'Execute Command: rm'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 38
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    39,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f16',
+    '2023-10-29 20:04:30',
+    'Execute Command: pwd'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 39
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    40,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f17',
+    '2023-10-29 20:05:50',
+    'Execute Command: whoami'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 40
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    41,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f18',
+    '2023-10-29 20:07:10',
+    'Execute Command: us'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 41
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    42,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f19',
+    '2023-10-29 20:08:30',
+    'Execute Command: sudo'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 42
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    43,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f20',
+    '2023-10-29 20:09:50',
+    'Execute Command: version'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 43
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    44,
+    'a5b9319f-8e9a-4ef1-964e-57bea8769f21',
+    '2023-10-29 20:11:10',
+    'Execute Command: cmd'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 44
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    45,
+    '6d887bd6-b76c-4321-9e01-87ad2d328a11',
+    '2023-11-14 08:20:40',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 45
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    46,
+    '6d887bd6-b76c-4321-9e01-87ad2d328a11',
+    '2023-11-15 08:20:50',
+    'Execute Command: login Username: ''OR 1=1'', Password: 12345678aA!'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 46
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    47,
+    'e49c89d7-2a16-4b8a-b38d-8edf6f65bbde',
+    '2023-12-03 14:10:25',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 47
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    48,
+    'e49c89d7-2a16-4b8a-b38d-8edf6f65bbde',
+    '2023-12-03 14:10:36',
+    'Execute Command: AUTH GET USERS'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 48
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    49,
+    'e49c89d7-2a16-4b8a-b38d-8edf6f65bbde',
+    '2023-12-03 14:10:47',
+    'Execute Command: AUTH LOGIN: Username: administrator, Password: P@sw0rd'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 49
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    50,
+    'e49c89d7-2a16-4b8a-b38d-8edf6f65bbde',
+    '2023-12-03 14:10:58',
+    'Execute Command: HELO'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 50
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    51,
+    'e49c89d7-2a16-4b8a-b38d-8edf6f65bbde',
+    '2023-12-03 14:11:09',
+    'Execute Command: EHLO'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 51
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    52,
+    'e49c89d7-2a16-4b8a-b38d-8edf6f65bbde',
+    '2023-12-03 14:11:20',
+    'Execute Command: HELP'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 52
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    53,
+    'e49c89d7-2a16-4b8a-b38d-8edf6f65bbde',
+    '2023-12-03 14:11:31',
+    'Execute Command: DATA'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 53
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    54,
+    'e49c89d7-2a16-4b8a-b38d-8edf6f65bbde',
+    '2023-12-03 14:11:42',
+    'Execute Command: VRFY "john.doe@intel.com"'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 54
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    55,
+    'e49c89d7-2a16-4b8a-b38d-8edf6f65bbde',
+    '2023-12-03 14:11:53',
+    'Execute Command: QUIT'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 55
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    56,
+    'f86e29ac-63c9-4c49-89de-d497e1e5c5a4',
+    '2022-01-06 18:40:15',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 56
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    57,
+    'f86e29ac-63c9-4c49-89de-d497e1e5c5a5',
+    '2022-01-06 18:41:15',
+    'Execute Command: VRFY "john.doe@intel.com"'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 57
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    58,
+    'f86e29ac-63c9-4c49-89de-d497e1e5c5a6',
+    '2022-01-06 18:42:15',
+    'Execute Command: QUIT'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 58
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    59,
+    'c4716c0f-d71b-4b7a-9e62-6c9c441c04ad',
+    '2022-02-17 11:25:50',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 59
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    60,
+    'c4716c0f-d71b-4b7a-9e62-6c9c441c04ad',
+    '2022-02-17 11:26:21',
+    'Execute Command: on_login: Username: user Password: 123456'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 60
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    61,
+    'c4716c0f-d71b-4b7a-9e62-6c9c441c04ad',
+    '2022-02-17 11:26:52',
+    'Execute Command: on_file_received'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 61
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    62,
+    'c4716c0f-d71b-4b7a-9e62-6c9c441c04ad',
+    '2022-02-17 11:27:23',
+    'Execute Command: on_logout'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 62
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    63,
+    'c4716c0f-d71b-4b7a-9e62-6c9c441c04ad',
+    '2022-02-17 11:27:54',
+    'Execute Command: on_disconnect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 63
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    64,
+    '247ed0bf-3f4c-4db9-81e0-2ef4546ef2bc',
+    '2022-03-22 06:05:12',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 64
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    65,
+    '247ed0bf-3f4c-4db9-81e0-2ef4546ef2bc',
+    '2022-03-22 06:06:12',
+    'login: Username: dev Password: fullaccess'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 65
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    66,
+    '247ed0bf-3f4c-4db9-81e0-2ef4546ef2bc',
+    '2022-03-22 06:07:12',
+    'Route: Users Details'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 66
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    67,
+    '247ed0bf-3f4c-4db9-81e0-2ef4546ef2bc',
+    '2022-03-22 06:08:12',
+    'Route: Company Employments Details'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 67
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    68,
+    '247ed0bf-3f4c-4db9-81e0-2ef4546ef2bc',
+    '2022-03-22 06:09:12',
+    'Route: Administrator Details'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 68
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    69,
+    '1822011a-8d68-4a57-a769-970573a11c47',
+    '2022-04-29 22:30:35',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 69
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    70,
+    '1822011a-8d68-4a57-a769-970573a11c47',
+    '2022-04-30 22:30:44',
+    'Execute Command: on_login: Username: root Password: toor'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 70
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    71,
+    '1822011a-8d68-4a57-a769-970573a11c47',
+    '2022-05-01 22:30:53',
+    'Execute Command: on_file_received'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 71
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    72,
+    '1822011a-8d68-4a57-a769-970573a11c47',
+    '2022-05-02 22:31:02',
+    'Execute Command: on_logout'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 72
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    73,
+    '1822011a-8d68-4a57-a769-970573a11c47',
+    '2022-05-03 22:31:11',
+    'Execute Command: on_disconnect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 73
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    74,
+    '5e1e778e-4a8d-485e-af5b-2a24a7c672bb',
+    '2022-05-15 17:50:03',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 74
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    75,
+    '5e1e778e-4a8d-485e-af5b-2a24a7c672bb',
+    '2022-05-15 17:51:03',
+    'Execute Command: login (Username: " or ""=", Password: 1561651sadA@'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 75
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    76,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 04:45:18',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 76
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    77,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 04:46:44',
+    'Execute Command: us'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 77
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    78,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 04:48:10',
+    'Execute Command: login Username: sudo Password: fullaccess'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 78
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    79,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 04:49:36',
+    'Execute Command: cd'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 79
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    80,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 04:51:02',
+    'Execute Command: cat'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 80
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    81,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 04:52:28',
+    'Execute Command: ls'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 81
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    82,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 04:53:54',
+    'Execute Command: help'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 82
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    83,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 04:55:20',
+    'Execute Command: rm'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 83
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    84,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 04:56:46',
+    'Execute Command: pwd'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 84
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    85,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 04:58:12',
+    'Execute Command: whoami'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 85
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    86,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 04:59:38',
+    'Execute Command: sudo'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 86
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    87,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 05:01:04',
+    'Execute Command: version'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 87
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    88,
+    'b38cc38e-0b4c-4ef0-a2a6-3461ce5a0e4f',
+    '2022-06-26 05:02:30',
+    'Execute Command: cmd'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 88
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    89,
+    'd4ae5b16-5d6d-4cc0-b8a6-89a98f1bc9ce',
+    '2022-07-12 13:00:08',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 89
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    90,
+    'd4ae5b16-5d6d-4cc0-b8a6-89a98f1bc9ce',
+    '2022-07-12 13:02:01',
+    'Execute Command: on_login: Username: Administrator Password: admin'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 90
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    91,
+    'd4ae5b16-5d6d-4cc0-b8a6-89a98f1bc9ce',
+    '2022-07-12 13:03:54',
+    'Execute Command: on_file_sent'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 91
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    92,
+    'd4ae5b16-5d6d-4cc0-b8a6-89a98f1bc9ce',
+    '2022-07-12 13:05:47',
+    'Execute Command: on_file_received'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 92
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    93,
+    'd4ae5b16-5d6d-4cc0-b8a6-89a98f1bc9ce',
+    '2022-07-12 13:07:40',
+    'Execute Command: on_logout'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 93
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    94,
+    'd4ae5b16-5d6d-4cc0-b8a6-89a98f1bc9ce',
+    '2022-07-12 13:09:33',
+    'Execute Command: on_disconnect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 94
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    95,
+    '14e933ee-9b5a-4a63-b425-9e8160dce3a9',
+    '2022-07-18 15:24:18',
+    'Execute Command: on_connect'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 95
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    96,
+    '14e933ee-9b5a-4a63-b425-9e8160dce3a10',
+    '2022-07-18 15:25:18',
+    'Try login: Username: root, Password: toor'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 96
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    97,
+    '14e933ee-9b5a-4a63-b425-9e8160dce3a11',
+    '2022-07-18 15:26:18',
+    'Try login: Username: Admin, Password: Admin'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 97
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    98,
+    '14e933ee-9b5a-4a63-b425-9e8160dce3a12',
+    '2022-07-18 15:27:18',
+    'Try login: Username: user, Password: 123456'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 98
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    99,
+    '14e933ee-9b5a-4a63-b425-9e8160dce3a13',
+    '2022-07-18 15:28:18',
+    'Try login: Username: user, Password: resu'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 99
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    100,
+    '14e933ee-9b5a-4a63-b425-9e8160dce3a14',
+    '2022-07-18 15:29:18',
+    'login: Username: Tilt, Password: Tool'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 100
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    101,
+    '14e933ee-9b5a-4a63-b425-9e8160dce3a15',
+    '2022-07-18 15:30:18',
+    'Route: Users Details'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 101
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    102,
+    '14e933ee-9b5a-4a63-b425-9e8160dce3a16',
+    '2022-07-18 15:31:18',
+    'Route: Company Employments Details'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 102
+    );
+
+INSERT INTO
+    `db`.`Log` (
+        `logID`,
+        `sessionID`,
+        `createAt`,
+        `description`
+    )
+SELECT
+    103,
+    '14e933ee-9b5a-4a63-b425-9e8160dce3a17',
+    '2022-07-18 15:32:18',
+    'Route: Administrator Details'
+WHERE NOT EXISTS (
+        SELECT *
+        FROM `db`.`Log`
+        WHERE `logID` = 103
+    );
