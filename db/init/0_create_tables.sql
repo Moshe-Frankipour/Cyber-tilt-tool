@@ -43,7 +43,7 @@ CREATE TABLE
         `serviceID` INT unsigned NOT NULL,
         PRIMARY KEY (`ID`),
         CONSTRAINT `idx_Companies_Services_companyID` FOREIGN KEY (`companyID`) REFERENCES `Company` (`companyID`),
-        CONSTRAINT `idx_Companies_Services_companyID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`)
+        CONSTRAINT `idx_Companies_Services_serviceID` FOREIGN KEY (`serviceID`) REFERENCES `Service` (`serviceID`)
     );
 
 CREATE TABLE
@@ -60,7 +60,7 @@ CREATE TABLE
 CREATE TABLE
     IF NOT EXISTS `db`.`Log` (
         `logID` INT unsigned NOT NULL AUTO_INCREMENT,
-        `sessionID` VARCHAR(32) NOT NULL,
+        `sessionID` VARCHAR(36) NOT NULL,
         `createAt` DATETIME NOT NULL,
         `description` TEXT,
         KEY `idx_sessionID` (`sessionID`) USING HASH,
@@ -74,7 +74,7 @@ CREATE TABLE
         `companies_services_id` INT unsigned NOT NULL,
         `attackerID` INT unsigned NOT NULL,
         `trapID` INT unsigned NOT NULL,
-        `sessionLogID` VARCHAR(32) NOT NULL,
+        `sessionLogID` VARCHAR(36) NOT NULL,
         CONSTRAINT `idx_Report_log_sessionID` FOREIGN KEY (`sessionLogID`) REFERENCES `Log` (`sessionID`),
         CONSTRAINT `idx_Report_companies_services_id` FOREIGN KEY (`companies_services_id`) REFERENCES `Companies_Services` (`ID`),
         CONSTRAINT `idx_Report_trapID` FOREIGN KEY (`trapID`) REFERENCES `Trap` (`trapID`),
