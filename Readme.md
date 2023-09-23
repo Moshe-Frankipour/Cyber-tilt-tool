@@ -78,7 +78,7 @@ Services -
 >
 > [Github](https://github.com/mfrankii) | [LinkedIn](https://www.linkedin.com/in/moshe-frank/) 
 
-> <a href="https://github.com/PeriAmiga"><kbd><img src=""/></kbd></a> &nbsp; Peri Amiga
+> <a href="https://github.com/PeriAmiga"><kbd><img src="https://avatars.githubusercontent.com/u/107958370?s=30"/></kbd></a> &nbsp; Peri Amiga
 >
 > [Github](https://github.com/PeriAmiga) | [LinkedIn](https://www.linkedin.com/in/peri-amiga-294815246/) 
 
